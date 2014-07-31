@@ -1,0 +1,6 @@
+[submodule "bang"]
+	path = bang
+	url = git@github.com:volkovasystems/bang.git
+[submodule "bump"]
+	path = bump
+	url = git@github.com:volkovasystems/bump.git
