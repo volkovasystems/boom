@@ -34,8 +34,8 @@ var boom = function boom( method, URL, catcher, requestOverride ){
 	}
 
 	if( typeof catcher != "undefined" ){
-		return boom( method, url, catcher, requestOverride );
+		return boom( method, URL, catcher, requestOverride );
 	}else{
-		return bang( method, url, requestOverride );
+		return bang( method, URL, requestOverride );
 	}
 };
