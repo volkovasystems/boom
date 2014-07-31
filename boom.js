@@ -16,20 +16,26 @@
 
 	@end-module-documentation
 */
-var boom = function boom( method, URL, catcher ){
+var boom = function boom( method, URL, catcher, requestOverride ){
 	/*:
 		@meta-configuration:
 			{
 				"method:required": "string",
 				"URL:required": "string",
-				"catcher:optional": "function"
+				"catcher:optional": "function",
+				"requestOverride:optional": "function" 
 			}
 		@end-meta-configuration
 	*/
 
+	if( ( /requestOverride$/i ).test( catcher.name ) ){
+		requestOverride = catcher;
+		catcher = null;
+	}
+
 	if( typeof catcher != "undefined" ){
-		return boom( method, url, catcher );
+		return boom( method, url, catcher, requestOverride );
 	}else{
-		return bang( method, url );
+		return bang( method, url, requestOverride );
 	}
 };
